@@ -1,11 +1,10 @@
 import { getImagesByQuery } from './js/pixabay-api.js';
-import { clearGallery, createGallery } from './js/render-functions.js';
+import { clearGallery, createGallery, hideLoader, showLoader } from './js/render-functions.js';
 
-const button = document.querySelector(".search-button");
+const form = document.querySelector(".form");
 const input = document.querySelector(".search-input");
-const loader = document.querySelector(".loader");
 
-button.addEventListener("click", async (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
   clearGallery();
 
@@ -24,11 +23,3 @@ button.addEventListener("click", async (e) => {
     hideLoader();
   }
 });
-
-function showLoader() {
-  loader.style.display = "block";
-}
-
-function hideLoader() {
-  loader.style.display = "none";
-}

@@ -12,6 +12,7 @@ export const getImagesByQuery = async (query) => {
       iziToast.error({
         message: 'Sorry, there are no images matching your search query. Please try again!',
       });
+      return [];
     }
 
     return response.data.hits;
